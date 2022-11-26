@@ -1,0 +1,733 @@
+@use 'colors.scss' as c;
+@use 'animations.scss';
+
+*,
+*::after,
+*::before {
+	padding: 0;
+	margin: 0;
+	box-sizing: border-box;
+}
+html {
+	scroll-behavior: smooth;
+	scroll-padding-top: 100px;
+}
+
+body {
+	font-family: 'Oswald', sans-serif;
+	background-color: c.$grey;
+}
+
+h2 {
+	text-transform: uppercase;
+	text-align: center;
+	font-weight: bold;
+	// font-size: 40px;
+}
+.underline {
+	width: 100px;
+	height: 4px;
+	background-color: c.$blue;
+	margin: 0px auto 30px;
+}
+
+.shadow-bg {
+	background-color: rgba(12, 12, 12, 0.8);
+}
+
+//NAVIGATION
+.navbar {
+	z-index: 2;
+	text-transform: uppercase;
+	transition: background-color 0.5s;
+	.navbar-toggler {
+		border: none;
+	}
+	.logo {
+		width: 100px;
+		height: 60px;
+	}
+
+	.navbar-brand {
+		color: c.$white;
+		font-weight: bold;
+
+		.logo-color-1 {
+			color: c.$logoYellow;
+		}
+		.logo-color-2 {
+			color: c.$logoBlue;
+		}
+	}
+
+	.nav-link {
+		font-size: 20px;
+		color: c.$white;
+		transition: color 0.3s;
+
+		&:hover {
+			color: c.$blue;
+		}
+	}
+	.fa-bars {
+		padding: 10px;
+		color: c.$white;
+	}
+}
+
+//HEADER
+header {
+	color: c.$white;
+
+	h1 {
+		font-size: 40px;
+		text-transform: uppercase;
+	}
+
+	.hero-img {
+		position: relative;
+		height: 100vh;
+		background-image: url('../img/styk-header.jpg');
+		background-size: cover;
+		background-position: center;
+		background-attachment: fixed;
+		z-index: 0;
+
+		.hero-shadow {
+			position: absolute;
+			height: 100%;
+			width: 100%;
+			background-color: rgba(0, 0, 0, 0.7);
+			z-index: -3;
+		}
+		.hero-text {
+			display: flex;
+			text-align: center;
+			flex-direction: column;
+			justify-content: center;
+			height: 100%;
+			padding: 10px;
+			align-items: center;
+			z-index: 2;
+
+			p {
+				font-size: 25px;
+			}
+			.btn {
+				font-size: 25px;
+			}
+		}
+	}
+	.fa-arrow-down {
+		position: absolute;
+		left: 50%;
+		transform: translateX(-50%);
+		bottom: 20px;
+		font-size: 50px;
+		color: c.$white;
+	}
+}
+
+// ABOUTUS
+
+.about-us {
+	h2 {
+		text-transform: uppercase;
+		text-align: center;
+		font-weight: bold;
+		// font-size: 40px;
+	}
+	.underline {
+		width: 100px;
+		height: 4px;
+		background-color: c.$blue;
+		margin: 0px auto 30px;
+	}
+	position: relative;
+	.hero-img {
+		display: flex;
+		position: relative;
+		height: 70vh;
+		background-image: url('/img/styk1.jpg');
+		background-size: cover;
+		background-attachment: fixed;
+		z-index: 1;
+
+		.hero-shadow {
+			position: absolute;
+			width: 100%;
+			height: 100%;
+			background-color: rgba(0, 0, 0, 0.85);
+			z-index: -2;
+		}
+		.hero-text {
+			height: 100%;
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+			justify-content: space-evenly;
+			font-size: 24px;
+			text-align: center;
+			color: c.$white;
+			z-index: -1;
+			word-spacing: 2px;
+
+			.film {
+				height: 550px;
+				width: 1200px;
+				border: 3px solid c.$white;
+				border-radius: 15px;
+				iframe {
+					border-radius: 15px;
+				}
+			}
+		}
+	}
+}
+
+//PROGRAMS
+
+.programs {
+	h2 {
+		text-transform: uppercase;
+		text-align: center;
+		font-weight: bold;
+		font-size: 35px;
+	}
+	.underline {
+		width: 100px;
+		height: 4px;
+		background-color: c.$blue;
+		margin: 0px auto 30px;
+	}
+
+	.carousel-item {
+		position: relative;
+		h5 {
+			text-transform: uppercase;
+		}
+	}
+	.carousel-caption {
+		a {
+			text-decoration: none;
+			font-weight: bold;
+			color: c.$deepBlue;
+			transition: color 0.3s;
+			&:hover {
+				color: c.$logoYellow;
+			}
+		}
+	}
+
+	.carousel-caption {
+		position: absolute;
+		width: 100%;
+		left: 0;
+		right: 0;
+		padding: 30px 0;
+		background-color: rgba(0, 0, 0, 0.8);
+	}
+	.carousel-indicators {
+		padding-bottom: 20px;
+	}
+	
+	.card-bg {
+		border: none;
+	}
+	.card {
+		margin-bottom: 20px;
+	}
+	.card-title {
+		text-align: center;
+		font-weight: bold;
+	}
+	.card-text {
+		text-align: center;
+		a {
+			text-decoration: none;
+			font-weight: bold;
+			color: c.$deepBlue;
+			transition: color 0.3s;
+			&:hover {
+				color: c.$logoYellow;
+			}
+		}
+	}
+}
+
+// MENAGEMENT //////////////
+.management {
+	background-image: url('/img/styk_tło_zarzadu.jpg');
+	background-attachment: fixed;
+	background-size: cover;
+	background-position: center;
+	position: relative;
+	z-index: 0;
+
+	.bg-image-shadow {
+		position: absolute;
+		top: 0px;
+		height: 100%;
+		width: 100%;
+		background-color: rgba(0, 0, 0, 0.7);
+		z-index: -2;
+	}
+	h2 {
+		text-transform: uppercase;
+		text-align: center;
+		font-weight: bold;
+		font-size: 35px;
+		color: c.$white;
+		z-index: 1;
+	}
+	.underline {
+		width: 100px;
+		height: 4px;
+		background-color: c.$blue;
+		margin: 0px auto 30px;
+	}
+
+	.card {
+		transition: transform 0.3s;
+		img {
+			object-fit: cover;
+			height: 400px;
+		}
+
+		&-text {
+			margin-top: 10px;
+			height: 250px;
+			overflow-y: auto;
+		}
+
+		&:hover {
+			transform: scale(0.95);
+		}
+
+		&-title {
+			text-align: center;
+			font-weight: bold;
+			font-size: 20px;
+			text-transform: uppercase;
+		}
+		&-subtitle {
+			text-align: center;
+			margin-bottom: 10px;
+		}
+	}
+}
+
+// RECRUITMENT
+
+.recruitment {
+	position: relative;
+	background-image: url('/img/styk_rekrutacja.jpg');
+	background-attachment: fixed;
+	background-size: cover;
+	background-position: center;
+	z-index: 0;
+
+	.bg-shadow {
+		position: absolute;
+		width: 100%;
+		height: 100%;
+		top: 0;
+		background-color: rgba(0, 0, 0, 0.7);
+		z-index: -2;
+	}
+	h2 {
+		text-transform: uppercase;
+		text-align: center;
+		font-weight: bold;
+		font-size: 35px;
+		color: c.$white;
+	}
+	.underline {
+		width: 100px;
+		height: 4px;
+		background-color: c.$blue;
+		margin: 0px auto 30px;
+	}
+	.text {
+		font-size: 20px;
+		font-weight: bold;
+		letter-spacing: 1px;
+		text-align: center;
+		color: c.$white;
+	}
+	.form {
+		text-align: center;
+		text-transform: uppercase;
+		font-weight: bold;
+		font-size: 35px;
+		transition: transform 0.3s;
+
+		&:hover {
+			transform: scale(1.1);
+		}
+		a {
+			color: c.$logoYellow;
+			text-decoration: none;
+			transition: color 0.3s;
+
+			&:hover {
+				color: c.$deepBlue;
+			}
+		}
+	}
+}
+
+//CONTACT
+
+.contact {
+	position: relative;
+	background-image: url('/img/styk_contact.jpg');
+	background-position: center;
+	background-size: cover;
+	z-index: 0;
+	h2 {
+		color: c.$white;
+	}
+	.contact-us {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		color: c.$white;
+	}
+
+	.contact-shadow {
+		position: absolute;
+		top: 0;
+		width: 100%;
+		height: 100%;
+		background-color: rgba(0, 0, 0, 0.8);
+		z-index: -1;
+	}
+	h3 {
+		text-transform: uppercase;
+		letter-spacing: 2px;
+	}
+	.contact-item {
+		margin: 30px 0;
+	}
+	.social-media {
+		font-size: 20px;
+		a {
+			color: c.$white;
+			text-decoration: none;
+			transition: color 0.3s;
+		}
+		i {
+			padding: 10px;
+			font-size: 40px;
+		}
+
+		a:hover {
+			color: c.$deepBlue;
+		}
+	}
+}
+
+@media (min-width: 320px) {
+	html {
+		scroll-padding-top: 82px;
+	}
+	.navbar {
+		.nav-link {
+			font-size: 15px;
+		}
+		.logo {
+			width: 70px;
+			height: 40px;
+		}
+		.navbar-brand {
+			font-size: 15px;
+		}
+		.fa-bars {
+			font-size: 20px;
+		}
+	}
+
+	header {
+		.hero-img {
+			.hero-text {
+				h1 {
+					font-size: 25px;
+				}
+
+				p {
+					font-size: 20px;
+				}
+				.btn {
+					font-size: 15px;
+				}
+			}
+			.fa-arrow-down {
+				font-size: 30px;
+			}
+		}
+	}
+	.about-us {
+		h2 {
+			font-size: 25px;
+		}
+		.hero-img {
+			.hero-text {
+				.text {
+					margin: 10px;
+					padding: 0 5px;
+					overflow: auto;
+					overflow-x: hidden;
+					font-size: 15px;
+				}
+				.film {
+					margin: 20px 0;
+					height: 270px;
+					width: 300px;
+				}
+			}
+		}
+	}
+	.programs {
+		h2 {
+			font-size: 25px;
+		}
+		.card-title {
+			font-size: 18px;
+		}
+		.card-text {
+			font-size: 15px;
+		}
+		
+	}
+	.management {
+		h2 {
+			font-size: 25px;
+		}
+	}
+	.recruitment {
+		h2 {
+			font-size: 25px;
+		}
+		.text {
+			font-size: 15px;
+		}
+		.form {
+			font-size: 20px;
+		}
+	}
+}
+
+@media (min-width: 576px) {
+	html {
+		scroll-padding-top: 87px;
+	}
+	.navbar {
+		.nav-link {
+			font-size: 18px;
+		}
+		.logo {
+			width: 80px;
+			height: 45px;
+		}
+		.navbar-brand {
+			font-size: 20px;
+		}
+		.fa-bars {
+			font-size: 23px;
+		}
+	}
+
+	header {
+		.hero-img {
+			.hero-text {
+				h1 {
+					font-size: 30px;
+				}
+
+				p {
+					font-size: 25px;
+				}
+				.btn {
+					font-size: 20px;
+				}
+			}
+			.fa-arrow-down {
+				font-size: 35px;
+			}
+		}
+	}
+	.about-us {
+		h2 {
+			font-size: 25px;
+		}
+		.hero-img {
+			.hero-text {
+				.text {
+					margin: 10px;
+					overflow: auto;
+					overflow-x: hidden;
+					font-size: 20px;
+					overflow: auto;
+				}
+				.film {
+					margin: 20px 0;
+					height: 400px;
+					width: 470px;
+				}
+			}
+		}
+	}
+	.programs {
+		h2 {
+			font-size: 25px;
+		}
+		.card-title {
+			font-size: 18px;
+		}
+		.card-text {
+			font-size: 15px;
+		}
+		
+	}
+	.management {
+		h2 {
+			font-size: 30px;
+		}
+	}
+	.recruitment {
+		h2 {
+			font-size: 30px;
+		}
+		.text {
+			font-size: 18px;
+		}
+		.form {
+			font-size: 25px;
+		}
+	}
+}
+@media (min-width: 768px) {
+	.about-us {
+		.hero-img {
+			.hero-text {
+				margin-top: 10px;
+				.film {
+					margin: 20px 0;
+					height: 400px;
+					width: 650px;
+				}
+			}
+		}
+	}
+	.programs {
+		.card-title {
+			font-size: 20px;
+		}
+		.card-text {
+			font-size: 18px;
+		}
+	}
+}
+@media (min-width: 992px) {
+	html {
+		scroll-padding-top: 97px;
+	}
+	header {
+		.hero-img {
+			.hero-text {
+				h1 {
+					font-size: 45px;
+				}
+			}
+		}
+	}
+
+	.navbar {
+		.nav-link {
+			font-size: 15px;
+		}
+		.logo {
+			width: 90px;
+			height: 55px;
+		}
+	}
+	.about-us {
+		h2 {
+			font-size: 30px;
+		}
+		.hero-img {
+			.hero-text {
+				.film {
+					margin: 20px 0;
+					height: 550px;
+					width: 850px;
+				}
+			}
+		}
+	}
+	.programs {
+		h2 {
+			font-size: 30px;
+		}
+	}
+	.management {
+		h2 {
+			font-size: 30px;
+		}
+	}
+	.recruitment {
+		h2 {
+			font-size: 30px;
+		}
+		.text {
+			font-size: 20px;
+		}
+		.form {
+			font-size: 25px;
+		}
+	}
+}
+@media (min-width: 1200px) {
+	html {
+		scroll-padding-top: 102px;
+	}
+	header {
+		h2 {
+			font-size: 40px;
+		}
+		.hero-img {
+			.fa-arrow-down {
+				font-size: 50px;
+			}
+		}
+	}
+	.navbar {
+		.nav-link {
+			font-size: 18px;
+		}
+		.logo {
+			width: 100px;
+			height: 60px;
+		}
+		.navbar-brand {
+			font-size: 25px;
+		}
+	}
+	.about-us {
+		.hero-img {
+			.hero-text {
+				.film {
+					margin: 20px 0;
+					height: 600px;
+					width: 1100px;
+				}
+			}
+		}
+	}
+	.recruitment {
+		.form {
+			font-size: 30px;
+		}
+	}
+}
